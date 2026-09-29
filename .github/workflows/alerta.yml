@@ -1,0 +1,24 @@
+name: Alerta DevOps ITLA
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Ejecutar Hola Mundo
+        run: node hola.js
+
+      - name: Enviar notificación a ntfy
+        run: |
+          curl -H "Title: Hola Mundo - GitHub Actions ITLA" \
+               -H "Priority: default" \
+               -d "Se realizó un push a la rama main del repositorio." \
+               https://ntfy.sh/devops-itla
