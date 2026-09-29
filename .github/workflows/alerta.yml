@@ -18,7 +18,7 @@ jobs:
 
       - name: Enviar notificación a ntfy
         run: |
-          curl -H "Title: Hola Mundo - GitHub Actions ITLA" \
+          curl -H "Title: Hola Mundo - Jean carlos Cabral P. 2025-1380" \
                -H "Priority: default" \
-               -d "Se realizó un push a la rama main del repositorio." \
+               -d "GitHub Actions ITLA." \
                https://ntfy.sh/devops-itla
